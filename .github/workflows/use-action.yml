@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd 
-      
+
     - name: Run our custom action
       id: versioning # You need an ID to capture outputs
-      uses: cert-labs-hq/automations-repo/.github/actions/get-version@main
+      uses: cert-labs-hq/automations-repo/.github/actions/get-version@4dd1408a9b335b9f6061179f2d3ba814f0b05589
