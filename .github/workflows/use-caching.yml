@@ -1,4 +1,4 @@
-name: use action
+name: use caching
 on: [workflow_dispatch] # workflow_dispatch allows manual triggers in the UI
 
 jobs:
@@ -17,3 +17,17 @@ jobs:
 
       - name: Build
         run: npm run build
+
+    # Simulate generating reports (SAST, SCA, Tests) 
+      - name: Generate Reports. 
+        run: |
+            mkdir -p reports
+            echo "SAST: No vulnerabilities found" > reports/sast.txt
+            echo "SCA: 0 high risks" > reports/sca.txt
+
+      - name: Upload Compliance Artifacts
+        uses: actions/upload-artifact@4cedc5d8fe50892a5d5b1ee27a6579222d061763 # v4 pinned
+        with:
+            name: compliance-data
+            path: reports/
+            retention-days: 1 # Keep it short for ephemeral reports

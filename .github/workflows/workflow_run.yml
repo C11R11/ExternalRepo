@@ -2,7 +2,7 @@ name: Compliance Reporting
 
 on:
   workflow_run:
-    workflows: ["use action"] # MUST match the 'name' in a workflow
+    workflows: ["use caching"] # MUST match the 'name' in a workflow
     types:
       - completed
 
