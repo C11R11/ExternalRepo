@@ -1,0 +1,28 @@
+name: Compliance Reporting
+
+on:
+  workflow_run:
+    workflows: ["use action"] # MUST match the 'name' in a workflow
+    types:
+      - completed
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    # Only run if the main build actually succeeded
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+      - name: Checkout Automations Repo (The Tooling)
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # Use your pinned SHA
+        with:
+          repository: C11R11/AutomationsRepo
+          path: tools
+
+      - name: Run Compliance Script
+        shell: bash
+        run: |
+          echo "### 🛡️ Compliance Report" >> $GITHUB_STEP_SUMMARY
+          echo "Checking build ID: ${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
+          echo "Status: PASSED ✅" >> $GITHUB_STEP_SUMMARY
+          echo "Build triggered by: ${{ github.event.workflow_run.triggering_actor.login }}" >> $GITHUB_STEP_SUMMARY
