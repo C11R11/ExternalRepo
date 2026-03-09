@@ -16,7 +16,7 @@ jobs:
       - name: Checkout Automations Repo (The Tooling)
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # Use your pinned SHA
         with:
-          repository: C11R11/AutomationsRepo
+          repository: cert-labs-hq/automations-repo
           path: tools
 
       - name: Run Compliance Script
