@@ -1,0 +1,7 @@
+name: Global Pipeline
+on: [push]
+
+jobs:
+  everything:
+    uses: C11R11/AutomationsRepo/.github/workflows/universal-orchestrator.yml@main
+    secrets: inherit
