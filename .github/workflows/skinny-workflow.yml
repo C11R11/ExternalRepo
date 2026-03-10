@@ -3,5 +3,5 @@ on: [workflow_dispatch] # workflow_dispatch allows manual triggers in the UI
 
 jobs:
   everything:
-    uses: cert-labs-hq/automations-repo/.github/workflows/universal-orchestrator.yml@a3f38af531f9c6c3832c85576d94a371d97cdf53%
+    uses: cert-labs-hq/automations-repo/.github/workflows/universal-orchestrator.yml@a3f38af531f9c6c3832c85576d94a371d97cdf53
     secrets: inherit
