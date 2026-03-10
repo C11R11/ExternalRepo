@@ -3,5 +3,5 @@ on: [push]
 
 jobs:
   everything:
-    uses: C11R11/AutomationsRepo/.github/workflows/universal-orchestrator.yml@main
+    uses: cert-labs-hq/automations-repo/.github/workflows/universal-orchestrator.yml@main
     secrets: inherit
