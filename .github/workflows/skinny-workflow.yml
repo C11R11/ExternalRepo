@@ -1,7 +1,7 @@
 name: Global Pipeline
-on: [push]
+on: [workflow_dispatch] # workflow_dispatch allows manual triggers in the UI
 
 jobs:
   everything:
-    uses: cert-labs-hq/automations-repo/.github/workflows/universal-orchestrator.yml@main
+    uses: cert-labs-hq/automations-repo/.github/workflows/universal-orchestrator.yml@25d85f60cdeb6ab8d16562c54cf8e9e8367eb1b5
     secrets: inherit
