@@ -22,8 +22,8 @@ jobs:
       - name: Generate Reports. 
         run: |
             mkdir -p reports
-            echo "SAST: No vulnerabilities found" > reports/sast.txt
-            echo "SCA: 0 high risks" > reports/sca.txt
+            echo "SAST: 1 vulnerabilities found" > reports/sast.txt
+            echo "SCA: 1 high risks" > reports/sca.txt
 
       - name: Upload Compliance Artifacts
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7 pinned
