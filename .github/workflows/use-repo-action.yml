@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest # Mandatory for local actions
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v5
     - name: Run single repo action
       id: versioning # You need an ID to capture outputs
       uses: cert-labs-hq/org_action@V1 # Using the version generator action from the same repo
