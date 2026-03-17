@@ -6,5 +6,7 @@ on:
 jobs:
   everything:
     uses: cert-labs-hq/automations-repo/.github/workflows/universal-orchestrator.yml@v1
-    secrets: 
+    with:
+      repo_name: ${{ github.repository }}
+    secrets:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
