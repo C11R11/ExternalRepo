@@ -1,6 +1,8 @@
 name: Global Pipeline
-on: [workflow_dispatch] # workflow_dispatch allows manual triggers in the UI
-
+on: 
+  workflow_dispatch: 
+  push:
+      branches-ignore: [main]
 jobs:
   everything:
     uses: cert-labs-hq/automations-repo/.github/workflows/universal-orchestrator.yml@v1
