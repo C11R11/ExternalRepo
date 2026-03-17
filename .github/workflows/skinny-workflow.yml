@@ -3,8 +3,8 @@ on:
   workflow_dispatch: 
   push:
       branches-ignore: [main]
-
 jobs:
   everything:
     uses: cert-labs-hq/automations-repo/.github/workflows/universal-orchestrator.yml@v1
-    secrets: inherit
+    secrets: 
+      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
